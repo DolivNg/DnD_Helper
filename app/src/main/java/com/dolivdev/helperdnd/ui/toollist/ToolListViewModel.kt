@@ -1,10 +1,10 @@
-package com.dolivdev.helperdnd.ui.gallery
+package com.dolivdev.helperdnd.ui.toollist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class ToolListViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"
