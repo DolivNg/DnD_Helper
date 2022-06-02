@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "44965154413",
+    "project_id": "helper-dnd",
+    "storage_bucket": "helper-dnd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44965154413:android:94de414b0b05bec7093964",
+        "android_client_info": {
+          "package_name": "com.dolivdev.helperdnd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44965154413-e67j4l4idlov5b8jallo53gmsaj1su4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnq0ZTub_KflXD4iodtDLaza_NrWzecCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44965154413-e67j4l4idlov5b8jallo53gmsaj1su4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

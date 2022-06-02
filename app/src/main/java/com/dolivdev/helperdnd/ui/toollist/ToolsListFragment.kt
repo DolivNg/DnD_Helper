@@ -28,6 +28,7 @@ class ToolsListFragment : Fragment() {
 
         _binding = FragmentToollistBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        //_binding.recyclerTooleTable.adapter =
 
         toolListViewModel.text.observe(viewLifecycleOwner) {
 
