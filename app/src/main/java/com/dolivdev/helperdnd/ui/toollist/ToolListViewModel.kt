@@ -3,12 +3,13 @@ package com.dolivdev.helperdnd.ui.toollist
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.dolivdev.helperdnd.domain.entity.TooleEntity
 
 class ToolListViewModel : ViewModel() {
+    lateinit var arrayList : MutableLiveData<TooleEntity>
 
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+    fun getArrayEntity() : LiveData<TooleEntity>{
+        return arrayList
     }
-    val text: LiveData<String> = _text
+
 }
