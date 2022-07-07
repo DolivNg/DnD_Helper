@@ -1,20 +1,14 @@
-package com.dolivdev.helperdnd.ui.toollist
+package com.dolivdev.helperdnd.presenter.toollist
 
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
-import com.dolivdev.helperdnd.R
 import com.dolivdev.helperdnd.databinding.FragmentToollistBinding
-import com.dolivdev.helperdnd.domain.entity.TooleEntity
-import com.dolivdev.helperdnd.ui.toollist.adapter.TooleTableAdapter
+import com.dolivdev.helperdnd.presenter.toollist.adapter.TooleTableAdapter
 
 
 class ToolsListFragment : Fragment() {

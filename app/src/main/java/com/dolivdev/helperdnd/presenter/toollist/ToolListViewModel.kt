@@ -1,4 +1,4 @@
-package com.dolivdev.helperdnd.ui.toollist
+package com.dolivdev.helperdnd.presenter.toollist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

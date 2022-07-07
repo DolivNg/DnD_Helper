@@ -1,19 +1,12 @@
-package com.dolivdev.helperdnd.ui.toollist.adapter
+package com.dolivdev.helperdnd.presenter.toollist.adapter
 
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.dolivdev.helperdnd.R
-import com.dolivdev.helperdnd.databinding.FragmentToollistBinding
 import com.dolivdev.helperdnd.databinding.RecycleElementTooleBinding
 import com.dolivdev.helperdnd.domain.entity.TooleEntity
-import com.dolivdev.helperdnd.ui.toollist.ToolsListFragment
 
 class TooleTableAdapter : RecyclerView.Adapter<TooleTableAdapter.TooleHolder>() {
     private var simpleTableArrayList: List<TooleEntity> = ArrayList()
@@ -44,20 +37,13 @@ class TooleTableAdapter : RecyclerView.Adapter<TooleTableAdapter.TooleHolder>() 
     inner class TooleHolder(view: View, private val binding: RecycleElementTooleBinding) :
         RecyclerView.ViewHolder(view), View.OnClickListener {
 
-        init {
-            //imVDelete.setOnClickListener(this)
-        }
-
         fun bind(tooleEntity: TooleEntity) {
             binding.tVNameToole.text = tooleEntity.NameToole
             binding.tVDescriptionToole.text = tooleEntity.DescriptionToole
-
             binding.tVPriceToole.text = tooleEntity.PriceToole
-
             binding.tVWightToole.text = tooleEntity.WeightToole
 
             if (tooleEntity.VisibleToole) {
-
                 if (tooleEntity.HomeBrew) {
 
                 }
@@ -67,9 +53,6 @@ class TooleTableAdapter : RecyclerView.Adapter<TooleTableAdapter.TooleHolder>() 
 
         override fun onClick(view: View) {
             when (view.id) {
-                R.id.imVDelete -> {
-
-                }
                 R.id.imVDelete -> {
 
                 }
