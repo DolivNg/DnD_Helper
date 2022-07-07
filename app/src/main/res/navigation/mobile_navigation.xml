@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.dolivdev.helperdnd.ui.home.HomeFragment"
+        android:name="com.dolivdev.helperdnd.presenter.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.dolivdev.helperdnd.ui.toollist.ToolsListFragment"
+        android:name="com.dolivdev.helperdnd.presenter.toollist.ToolsListFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_toollist" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.dolivdev.helperdnd.ui.slideshow.SlideshowFragment"
+        android:name="com.dolivdev.helperdnd.presenter.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
