@@ -13,10 +13,13 @@
         <entry key="..\:/dnd helper/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/dnd helper/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/dnd helper/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/dnd helper/app/src/main/res/layout/fragment_slideshow.xml" value="0.14356884057971014" />
+        <entry key="..\:/dnd helper/app/src/main/res/layout/fragment_slideshow.xml" value="0.176" />
+        <entry key="..\:/dnd helper/app/src/main/res/layout/fragment_spell_description.xml" value="0.2" />
+        <entry key="..\:/dnd helper/app/src/main/res/layout/fragment_spellslist.xml" value="0.264" />
         <entry key="..\:/dnd helper/app/src/main/res/layout/fragment_toollist.xml" value="0.2" />
         <entry key="..\:/dnd helper/app/src/main/res/layout/nav_header_main.xml" value="0.2" />
         <entry key="..\:/dnd helper/app/src/main/res/layout/recycle_element_toole.xml" value="0.15789473684210525" />
+        <entry key="..\:/dnd helper/app/src/main/res/layout/spell_recycle_layout.xml" value="0.4" />
         <entry key="..\:/dnd helper/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
         <entry key="..\:/dnd helper/app/src/main/res/menu/main.xml" value="0.1" />
         <entry key="..\:/projects/HelperDnD/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
