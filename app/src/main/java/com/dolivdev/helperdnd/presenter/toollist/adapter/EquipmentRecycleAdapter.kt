@@ -5,36 +5,38 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dolivdev.helperdnd.R
-import com.dolivdev.helperdnd.databinding.RecycleElementTooleBinding
+import com.dolivdev.helperdnd.databinding.EquipmentRecycleLayoutBinding
+
+import com.dolivdev.helperdnd.databinding.SpellRecycleLayoutBinding
 import com.dolivdev.helperdnd.domain.entity.TooleEntity
 
-class TooleTableAdapter : RecyclerView.Adapter<TooleTableAdapter.TooleHolder>() {
-    private var simpleTableArrayList: List<TooleEntity> = ArrayList()
-    private val simpleTableViewHolders: MutableList<TooleHolder> = ArrayList()
+class EquipmentRecycleAdapter : RecyclerView.Adapter<EquipmentRecycleAdapter.EquipmentHolder>() {
+    private var tooleArrayList: List<TooleEntity> = ArrayList()
+    private val tooleViewHolders: MutableList<EquipmentHolder> = ArrayList()
 
     fun setTooleListArrayList(tooleEntityList: List<TooleEntity>) {
-        this.simpleTableArrayList = tooleEntityList
+        this.tooleArrayList = tooleEntityList
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TooleHolder {
-        val binding =
-            RecycleElementTooleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        val holder = TooleHolder(binding.root, binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipmentHolder {
+        val binding = EquipmentRecycleLayoutBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
+        val holder = EquipmentHolder(binding.root, binding)
 
-        simpleTableViewHolders.add(holder)
+        tooleViewHolders.add(holder)
         return holder
     }
 
-    override fun onBindViewHolder(holder: TooleHolder, position: Int) {
-        holder.bind(simpleTableArrayList[position])
+    override fun onBindViewHolder(holder: EquipmentHolder, position: Int) {
+        holder.bind(tooleArrayList[position])
     }
 
     override fun getItemCount(): Int {
-        return simpleTableArrayList.size
+        return tooleArrayList.size
     }
 
-    inner class TooleHolder(view: View, private val binding: RecycleElementTooleBinding) :
+    inner class EquipmentHolder(view: View, private val binding: EquipmentRecycleLayoutBinding) :
         RecyclerView.ViewHolder(view), View.OnClickListener {
 
         fun bind(tooleEntity: TooleEntity) {
