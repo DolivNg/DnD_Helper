@@ -1,4 +1,4 @@
-package com.dolivdev.helperdnd.domain.entity
+package com.dolivdev.helperdnd.domain.entity.equipnet
 
 data class TooleEntity(
     var NameToole : String = "",

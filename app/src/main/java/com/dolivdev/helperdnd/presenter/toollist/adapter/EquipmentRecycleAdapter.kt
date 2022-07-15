@@ -7,17 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dolivdev.helperdnd.R
 import com.dolivdev.helperdnd.databinding.EquipmentRecycleLayoutBinding
 
-import com.dolivdev.helperdnd.databinding.SpellRecycleLayoutBinding
-import com.dolivdev.helperdnd.domain.entity.TooleEntity
+import com.dolivdev.helperdnd.domain.entity.equipnet.TooleEntity
 
 class EquipmentRecycleAdapter : RecyclerView.Adapter<EquipmentRecycleAdapter.EquipmentHolder>() {
-    private var tooleArrayList: List<TooleEntity> = ArrayList()
+    var tooleArrayList: List<TooleEntity> = ArrayList()
+
     private val tooleViewHolders: MutableList<EquipmentHolder> = ArrayList()
 
     fun setTooleListArrayList(tooleEntityList: List<TooleEntity>) {
         this.tooleArrayList = tooleEntityList
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipmentHolder {
         val binding = EquipmentRecycleLayoutBinding
@@ -25,6 +24,7 @@ class EquipmentRecycleAdapter : RecyclerView.Adapter<EquipmentRecycleAdapter.Equ
         val holder = EquipmentHolder(binding.root, binding)
 
         tooleViewHolders.add(holder)
+
         return holder
     }
 
