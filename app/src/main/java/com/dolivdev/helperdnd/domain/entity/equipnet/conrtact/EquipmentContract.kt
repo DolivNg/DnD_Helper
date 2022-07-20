@@ -1,4 +1,4 @@
-package com.dolivdev.helperdnd.data.equipment.contact
+package com.dolivdev.helperdnd.domain.entity.equipnet.conrtact
 
 import android.provider.BaseColumns
 
@@ -14,7 +14,7 @@ class EquipmentContract {
         const val COLUMN_TOOLE_NANE = "toole_name"
         const val COLUMN_TOOLE_DESCRIPTION = "toole_description"
         const val COLUMN_TOOLE_SOURCE = "toole_source"
-        const val COLUMN_NAME_TOOLE_WIGHT = "toole_wight"
+        const val COLUMN_TOOLE_WIGHT = "toole_wight"
     }
 
     object TypeEntry : BaseColumns {

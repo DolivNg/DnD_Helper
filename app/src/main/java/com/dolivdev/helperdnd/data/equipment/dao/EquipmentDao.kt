@@ -1,8 +1,8 @@
 package com.dolivdev.helperdnd.data.equipment.dao
 
 import androidx.room.*
-import com.dolivdev.helperdnd.data.equipment.contact.EquipmentContract
-import com.dolivdev.helperdnd.domain.entity.equipnet.TooleEntity
+import com.dolivdev.helperdnd.domain.entity.equipnet.conrtact.EquipmentContract
+import com.dolivdev.helperdnd.domain.entity.equipnet.EquipmentEntity
 
 @Dao
 interface EquipmentDao {
@@ -21,7 +21,7 @@ interface EquipmentDao {
                 ", con."
                 + EquipmentContract.CoinEntry.COLUMN_TYPE_PRICE +
                 ", eq."
-                + EquipmentContract.EquipmentEntry.COLUMN_NAME_TOOLE_WIGHT +
+                + EquipmentContract.EquipmentEntry.COLUMN_TOOLE_WIGHT +
                 ", eq."
                 + EquipmentContract.EquipmentEntry.COLUMN_TOOLE_DESCRIPTION +
                 ", sour."
@@ -60,7 +60,7 @@ interface EquipmentDao {
                 + EquipmentContract.SourceEntry._ID +
                 " ;"
     )
-    fun getEquipmentTable(): ArrayList<TooleEntity>
+    fun getEquipmentTable(): ArrayList<EquipmentEntity>
 
     @Query("SELECT "
             + EquipmentContract.CategoryEntry.COLUMN_NAME +

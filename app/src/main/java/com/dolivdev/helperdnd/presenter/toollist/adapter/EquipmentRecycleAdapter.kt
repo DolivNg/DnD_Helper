@@ -7,43 +7,41 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dolivdev.helperdnd.R
 import com.dolivdev.helperdnd.databinding.EquipmentRecycleLayoutBinding
 
-import com.dolivdev.helperdnd.domain.entity.equipnet.TooleEntity
+import com.dolivdev.helperdnd.domain.entity.equipnet.EquipmentEntity
 
-class EquipmentRecycleAdapter : RecyclerView.Adapter<EquipmentRecycleAdapter.EquipmentHolder>() {
-    var tooleArrayList: List<TooleEntity> = ArrayList()
+class EquipmentRecycleAdapter(var equipmentArrayList: ArrayList<EquipmentEntity>) : RecyclerView.Adapter<EquipmentRecycleAdapter.EquipmentHolder>() {
 
-    private val tooleViewHolders: MutableList<EquipmentHolder> = ArrayList()
 
-    fun setTooleListArrayList(tooleEntityList: List<TooleEntity>) {
-        this.tooleArrayList = tooleEntityList
-    }
+    private val equipmentViewHolders: MutableList<EquipmentHolder> = ArrayList()
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipmentHolder {
         val binding = EquipmentRecycleLayoutBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         val holder = EquipmentHolder(binding.root, binding)
 
-        tooleViewHolders.add(holder)
+        equipmentViewHolders.add(holder)
 
         return holder
     }
 
     override fun onBindViewHolder(holder: EquipmentHolder, position: Int) {
-        holder.bind(tooleArrayList[position])
+        holder.bind(equipmentArrayList[position])
     }
 
     override fun getItemCount(): Int {
-        return tooleArrayList.size
+        return equipmentArrayList.size
     }
 
     inner class EquipmentHolder(view: View, private val binding: EquipmentRecycleLayoutBinding) :
         RecyclerView.ViewHolder(view), View.OnClickListener {
 
-        fun bind(tooleEntity: TooleEntity) {
-            binding.tVNameToole.text = tooleEntity.NameToole
-            binding.tVDescriptionToole.text = tooleEntity.DescriptionToole
-            binding.tVPriceToole.text = tooleEntity.PriceToole
-            binding.tVWightToole.text = tooleEntity.WeightToole
+        fun bind(tooleEntity: EquipmentEntity) {
+            binding.tVNameToole.text = tooleEntity.nameToole
+            binding.tVDescriptionToole.text = tooleEntity.descriptionToole
+            binding.tVPriceToole.text = tooleEntity.priceToole
+            binding.tVWightToole.text = tooleEntity.weightToole
 
             if (tooleEntity.VisibleToole) {
                 if (tooleEntity.HomeBrew) {

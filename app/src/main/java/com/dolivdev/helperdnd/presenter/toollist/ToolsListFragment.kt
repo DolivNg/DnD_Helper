@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.dolivdev.helperdnd.databinding.FragmentToollistBinding
 import com.dolivdev.helperdnd.presenter.toollist.adapter.EquipmentRecycleAdapter
@@ -23,13 +24,17 @@ class ToolsListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val toolListViewModel =
-            ViewModelProvider(this)[ToolListViewModel::class.java]
+        val equipmentListViewModel =
+            ViewModelProvider(this)[EquipmentListViewModel::class.java]
+
 
         _binding = FragmentToollistBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        //val adapter = EquipmentRecycleAdapter()
 
-        binding.recyclerToole.adapter = EquipmentRecycleAdapter()
+        equipmentListViewModel.arrayList.observe(viewLifecycleOwner) {
+            binding.recyclerToole.adapter = EquipmentRecycleAdapter(it)
+        }
 
         binding.searchTooleView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             android.widget.SearchView.OnQueryTextListener {
@@ -48,7 +53,7 @@ class ToolsListFragment : Fragment() {
             }
         } )
 
-        toolListViewModel.getArrayEntity().observe(viewLifecycleOwner) {
+        equipmentListViewModel.getArrayEntity().observe(viewLifecycleOwner) {
             //_binding!!.recyclerToole.adapter.//.setTooleListArrayList(it)
         }
         return root
