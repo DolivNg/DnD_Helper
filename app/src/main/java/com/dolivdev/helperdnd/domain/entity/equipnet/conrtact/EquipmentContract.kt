@@ -10,11 +10,11 @@ class EquipmentContract {
         const val COLUMN_COIN_ID = "coin_id"
         const val COLUMN_TYPE_ID = "type_id"
         const val COLUMN_CATEGORY_ID = "category_id"
-        const val COLUMN_TOOLE_PRICE = "toole_price"
-        const val COLUMN_TOOLE_NANE = "toole_name"
-        const val COLUMN_TOOLE_DESCRIPTION = "toole_description"
-        const val COLUMN_TOOLE_SOURCE = "toole_source"
-        const val COLUMN_TOOLE_WIGHT = "toole_wight"
+        const val COLUMN_TOOL_PRICE = "toole_price"
+        const val COLUMN_TOOL_NANE = "toole_name"
+        const val COLUMN_TOOL_DESCRIPTION = "toole_description"
+        const val COLUMN_TOOL_SOURCE = "toole_source"
+        const val COLUMN_TOOL_WIGHT = "toole_wight"
     }
 
     object TypeEntry : BaseColumns {
@@ -54,7 +54,7 @@ class EquipmentContract {
         const val TABLE_NAME = "market_table"
         const val _ID = "_id"
         const val COLUMN_EQUIPMENT_ID = "equipmetnt_id"
-
+        const val COLUMN_EQUIPMENT_VALUE = "value"
         /**TODO */
         const val COLUMN_MARKET_ID = "market_id"
     }

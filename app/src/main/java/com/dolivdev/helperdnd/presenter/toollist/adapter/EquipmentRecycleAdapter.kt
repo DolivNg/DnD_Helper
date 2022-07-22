@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dolivdev.helperdnd.R
 import com.dolivdev.helperdnd.databinding.EquipmentRecycleLayoutBinding
+import com.dolivdev.helperdnd.domain.entity.equipnet.EquipDataEntity
 
-import com.dolivdev.helperdnd.domain.entity.equipnet.EquipmentEntity
-
-class EquipmentRecycleAdapter(var equipmentArrayList: ArrayList<EquipmentEntity>) : RecyclerView.Adapter<EquipmentRecycleAdapter.EquipmentHolder>() {
+class EquipmentRecycleAdapter(var equipmentArrayList: ArrayList<EquipDataEntity.EquipmentEntity>) : RecyclerView.Adapter<EquipmentRecycleAdapter.EquipmentHolder>() {
 
 
     private val equipmentViewHolders: MutableList<EquipmentHolder> = ArrayList()
@@ -37,17 +36,17 @@ class EquipmentRecycleAdapter(var equipmentArrayList: ArrayList<EquipmentEntity>
     inner class EquipmentHolder(view: View, private val binding: EquipmentRecycleLayoutBinding) :
         RecyclerView.ViewHolder(view), View.OnClickListener {
 
-        fun bind(tooleEntity: EquipmentEntity) {
-            binding.tVNameToole.text = tooleEntity.nameToole
-            binding.tVDescriptionToole.text = tooleEntity.descriptionToole
-            binding.tVPriceToole.text = tooleEntity.priceToole
-            binding.tVWightToole.text = tooleEntity.weightToole
-
+        fun bind(tooleEntity: EquipDataEntity.EquipmentEntity) {
+            binding.tVNameToole.text = tooleEntity.nameTool
+            binding.tVDescriptionToole.text = tooleEntity.descriptionTool
+            binding.tVPriceToole.text = tooleEntity.priceTool.toString()
+            binding.tVWightToole.text = tooleEntity.weightTool
+            /*
             if (tooleEntity.VisibleToole) {
                 if (tooleEntity.HomeBrew) {
 
                 }
-            }
+            }*/
             //binding.tVDescriptionToole.visibility = tooleEntity.
         }
 

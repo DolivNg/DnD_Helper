@@ -4,26 +4,27 @@ import android.content.Context
 import androidx.room.Room
 import com.dolivdev.helperdnd.data.equipment.dao.EquipmentDao
 import com.dolivdev.helperdnd.data.equipment.dao.EquipmentDatabase
-import com.dolivdev.helperdnd.domain.entity.equipnet.EquipmentEntity
+import com.dolivdev.helperdnd.domain.entity.equipnet.EquipDataEntity
+import com.dolivdev.helperdnd.domain.entity.equipnet.EquipmentEntits
 import com.dolivdev.helperdnd.domain.repositoryes.EquipmentRepository
 
 class EquipmentRepositoryImpl(context: Context) : EquipmentRepository {
     private val equipmentDao: EquipmentDao
+    private var db: EquipmentDatabase
 
     init {
-        val db = Room.databaseBuilder(
+        db = Room.databaseBuilder(
             context,
             EquipmentDatabase::class.java,
-            "equipmentTable.db"
-        ).build()
+            "equipment"
+        ).createFromAsset("equipmentTable.db")
+            .build()
         equipmentDao = db.equipmentDao()
     }
 
 
-    override fun getEquipmentEntityList(): ArrayList<EquipmentEntity> {
-        return equipmentDao.getEquipmentTable()
-        //val users: List<User> = userDao.getAll()
-        TODO("Not yet implemented")
+    override fun getEquipmentEntityList(): ArrayList<EquipDataEntity.EquipmentEntity> {
+        return ArrayList<EquipDataEntity.EquipmentEntity>()// equipmentDao.getEquipmentTable()
 
     }
 
@@ -35,7 +36,7 @@ class EquipmentRepositoryImpl(context: Context) : EquipmentRepository {
         TODO("Not yet implemented")
     }
 
-    override fun setEquipment(equipmentEntity: EquipmentEntity) {
+    override fun setEquipment(equipmentEntity: EquipDataEntity.EquipmentEntity) {
         TODO("Not yet implemented")
     }
 

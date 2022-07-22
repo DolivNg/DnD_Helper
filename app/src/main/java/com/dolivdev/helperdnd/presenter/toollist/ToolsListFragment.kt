@@ -7,14 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.dolivdev.helperdnd.databinding.FragmentToollistBinding
 import com.dolivdev.helperdnd.presenter.toollist.adapter.EquipmentRecycleAdapter
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 
-
+@AndroidEntryPoint
 class ToolsListFragment : Fragment() {
-
+    val vm : EquipmentListViewModel by viewModels()
     private var _binding: FragmentToollistBinding? = null
 
     private val binding get() = _binding!!
@@ -24,15 +28,12 @@ class ToolsListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val equipmentListViewModel =
-            ViewModelProvider(this)[EquipmentListViewModel::class.java]
-
 
         _binding = FragmentToollistBinding.inflate(inflater, container, false)
         val root: View = binding.root
         //val adapter = EquipmentRecycleAdapter()
 
-        equipmentListViewModel.arrayList.observe(viewLifecycleOwner) {
+        vm.getArrayEntity().observe(viewLifecycleOwner) {
             binding.recyclerToole.adapter = EquipmentRecycleAdapter(it)
         }
 
@@ -53,9 +54,7 @@ class ToolsListFragment : Fragment() {
             }
         } )
 
-        equipmentListViewModel.getArrayEntity().observe(viewLifecycleOwner) {
-            //_binding!!.recyclerToole.adapter.//.setTooleListArrayList(it)
-        }
+
         return root
     }
 

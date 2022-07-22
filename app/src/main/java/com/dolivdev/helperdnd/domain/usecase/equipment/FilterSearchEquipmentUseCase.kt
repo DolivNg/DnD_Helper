@@ -2,17 +2,24 @@ package com.dolivdev.helperdnd.domain.usecase.equipment
 
 import android.widget.Filter
 import android.widget.Filterable
-import com.dolivdev.helperdnd.domain.entity.equipnet.EquipmentEntity
+import com.dolivdev.helperdnd.domain.entity.equipnet.EquipDataEntity
+import com.dolivdev.helperdnd.domain.repositoryes.EquipmentRepository
 import java.util.*
+import javax.inject.Inject
+import kotlin.collections.ArrayList
 
-class FilterSearchEquipmentUseCase : Filterable {
+class FilterSearchEquipmentUseCase @Inject constructor(private val equipRep : EquipmentRepository) : Filterable {
+    fun getList(): ArrayList<EquipDataEntity.EquipmentEntity>{
+       return equipRep.getEquipmentEntityList()
+    }
+
     override fun getFilter(): Filter {
         TODO("Not yet implemented")
     }
 
     private val equipmentFilter: Filter = object : Filter() {
         override fun performFiltering(constraint: CharSequence): FilterResults {
-            val filteredList: MutableList<EquipmentEntity> = ArrayList()
+            val filteredList: MutableList<EquipDataEntity.EquipmentEntity> = ArrayList()
             if (constraint.isEmpty()) {
                 //filteredList.addAll(equipmentTableListFull)
             } else {
